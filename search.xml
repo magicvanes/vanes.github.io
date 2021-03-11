@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>SSM框架的搭建</title>
+    <url>/2017/11/06/ssm/</url>
+    <content><![CDATA[<p>学习到了ssm项目的结构，本文将介绍该框架的搭建</p>
+<h1 id="准备工作-开发环境"><a href="#准备工作-开发环境" class="headerlink" title="准备工作:开发环境"></a>准备工作:开发环境</h1><pre class=" language-java"><code class="language-java">    #<span class="token operator">!</span><span class="token operator">/</span>conf<span class="token operator">/</span>setting<span class="token punctuation">.</span>xml
+    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorld</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
+        <span class="token keyword">private</span> String userName<span class="token punctuation">;</span>
+        <span class="token keyword">private</span> String userPassword<span class="token punctuation">;</span>
+    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+</code></pre>
+]]></content>
+      <categories>
+        <category>项目搭建</category>
+      </categories>
+      <tags>
+        <tag>SSM</tag>
+        <tag>Spring</tag>
+        <tag>SpringMVC</tag>
+        <tag>MyBatis</tag>
+      </tags>
+  </entry>
+</search>
