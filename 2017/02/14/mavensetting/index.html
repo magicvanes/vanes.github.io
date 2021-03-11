@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Vane&#39;s Blog">
+    <meta name="keywords" content="Maven安装以及本地仓库配置, Vane&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Vane&#39;s Blog</title>
+    <title>Maven安装以及本地仓库配置 | Vane&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -222,416 +222,433 @@
 </header>
 
     
-<style>
-    .carousel-control {
-        width: 45px;
-        height: 45px;
-        line-height: 55px;
-        border-radius: 45px;
-        background: transparent;
-        cursor: pointer;
-        z-index: 100;
-    }
-
-    #prev-cover {
-        position: absolute;
-        top: 48%;
-        left: 8px;
-    }
-
-    #next-cover {
-        position: absolute;
-        top: 48%;
-        right: 8px;;
-    }
-
-    #prev-cover i {
-        margin-right: 3px;
-    }
-
-    #next-cover i {
-        margin-left: 3px;
-    }
-
-    .carousel-control:hover {
-        background-color: rgba(0, 0, 0, .4);
-    }
-
-    .carousel-control i {
-        color: #fff;
-        font-size: 2.4rem;
-    }
-</style>
 
 
 
-<div class="carousel carousel-slider center index-cover" data-indicators="true" style="margin-top: -64px;">
-    
-
-    <div class="carousel-item red white-text bg-cover about-cover">
-        <div class="container">
-            <div class="row">
-    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
-        <div class="brand">
-            <div class="title center-align">
-                
-                Welcome
-                
-            </div>
-
-            <div class="description center-align">
-                
-                <span id="subtitle"></span>
-                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-                <script>
-                    var typed = new Typed("#subtitle", {
-                        strings: [ 
-                            
-                                "海内存知己,天涯若比邻,很高兴能在此相遇",
-                            
-                                "终点都在附近,请时刻保持热烈,学习永无止境",
-                            
-                        ],
-                        startDelay: 300,
-                        typeSpeed: 100,
-                        loop: true,
-                        backSpeed: 200,
-                        showCursor: true
-                    });
-                </script>
-                
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/postimg/3.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Maven安装以及本地仓库配置</h1>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 
-<script>
-    $('.bg-cover').css('background-image', 'url(/medias/banner/4.jpg)');
-</script>
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/maven/">
+                                <span class="chip bg-color">maven</span>
+                            </a>
+                        
+                            <a href="/tags/versioncontrol/">
+                                <span class="chip bg-color">versioncontrol</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="post-category">
+                                环境搭建
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2017-02-14
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    497
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    1 分
+                </div>
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>今天用到了maven进行项目版本管理，感觉maven真的是太强了。记录一下过程<br>Maven是一个Java项目管理和构建工具，它可以定义项目结构、项目依赖，并使用统一的方式进行自动化构建。</p>
+<h2 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h2><pre class=" language-bash"><code class="language-bash">通过官网下载zip到本地进行解压,zip是免安装的，配置的时候只需要指向解压出来的根目录就好了
+</code></pre>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ol>
+<li>基本跟jdk配置差不多，就是少了个配置。参考:<a href="http://www.magicvanes.top/2016/11/06/jdkforwindows">jdk配置</a></li>
+<li>配置好先cmd测试一下:mvn -version,如果显示版本信息就是配置成功了</li>
+<li>命令的使用:通过cmd操作cd命令进入maven根目录执行</li>
+</ol>
+<h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><pre class=" language-bash"><code class="language-bash">mvn archetype：create 创建Maven项目
+
+mvn compile 编译源代码
+
+mvn deploy 发布项目
+
+mvn test-compile 编译测试源代码
+
+mvn <span class="token function">test</span> 运行应用程序中的单元测试
+
+mvn site 生成项目相关信息的网站
+
+mvn clean 清除项目目录中的生成结果
+
+mvn package 根据项目生成的jar
+
+mvn <span class="token function">install</span> 在本地Repository中安装jar
+
+mvn eclipse:eclipse 生成eclipse项目文件
+
+mvnjetty:run 启动jetty服务
+
+mvntomcat:run 启动tomcat服务
+
+mvn clean package -Dmaven.test.skip<span class="token operator">=</span>true:清除以前的包后重新打包，跳过测试类
+</code></pre>
+<h4 id="添加本地仓库"><a href="#添加本地仓库" class="headerlink" title="添加本地仓库"></a>添加本地仓库</h4><p>在maven根目录新建一个文件夹为repository的文件夹作为本地仓库，用于存放下载的jar包文件<br>在根目录下的conf目录进行找到setting进行如下配置:</p>
+<pre class=" language-xml"><code class="language-xml">!/conf/setting.xml
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>localRepository</span><span class="token punctuation">></span></span>yourDirectory\repository<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>localRepository</span><span class="token punctuation">></span></span>
+</code></pre>
+<h5 id="添加阿里云maven仓库镜像"><a href="#添加阿里云maven仓库镜像" class="headerlink" title="添加阿里云maven仓库镜像"></a>添加阿里云maven仓库镜像</h5><p>如果没梯子的话，平常开发项目下载jar包是一件很痛苦的事情，所以直接换国内的镜像地址，少点等待，多点爱。<br>在setting.xml修改如下配置:</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">!</span><span class="token operator">/</span>conf<span class="token operator">/</span>setting<span class="token operator">/</span>mirror
+<span class="token operator">&lt;</span>mirrors<span class="token operator">></span>
+<span class="token operator">&lt;</span>mirror<span class="token operator">></span>
+<span class="token operator">&lt;</span>id<span class="token operator">></span>aliyunmaven<span class="token operator">&lt;</span><span class="token operator">/</span>id<span class="token operator">></span>
+  <span class="token operator">&lt;</span>mirrorOf<span class="token operator">></span><span class="token operator">*</span><span class="token operator">&lt;</span><span class="token operator">/</span>mirrorOf<span class="token operator">></span>
+    <span class="token operator">&lt;</span>name<span class="token operator">></span>阿里云公共仓库<span class="token operator">&lt;</span><span class="token operator">/</span>name<span class="token operator">></span>
+  <span class="token operator">&lt;</span>url<span class="token operator">></span>https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>maven<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com<span class="token operator">/</span>repository<span class="token operator">/</span><span class="token keyword">public</span><span class="token operator">&lt;</span><span class="token operator">/</span>url<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>mirror<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>mirrors<span class="token operator">></span>
+</code></pre>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">vanes</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://www.magicvanes.top/2017/02/14/mavensetting/">http://www.magicvanes.top/2017/02/14/mavensetting/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">vanes</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
 
 
 
-            <div class="cover-btns">
-                <a href="#indexCard" class="waves-effect waves-light btn">
-                    <i class="fa fa-angle-double-down"></i>开始阅读
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/maven/">
+                                    <span class="chip bg-color">maven</span>
+                                </a>
+                            
+                                <a href="/tags/versioncontrol/">
+                                    <span class="chip bg-color">versioncontrol</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="google,qq,qzone,wechat" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2017/11/06/ssm/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/postimg/1.jpg" class="responsive-img" alt="SSM框架—详细整合(Spring+SpringMVC+Mybatis)">
+                        
+                        <span class="card-title">SSM框架—详细整合(Spring+SpringMVC+Mybatis)</span>
+                    </div>
                 </a>
-
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            SSM-spring+springMVC+mybatis项目的搭建
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2017-11-06
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B4%E5%90%88%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    整合框架
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
                 
-                    <a href="https://github.com/magicvanes" class="waves-effect waves-light btn" target="_blank">
-                        <i class="fab fa-github-alt"></i>Github
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/SSM/">
+                        <span class="chip bg-color">SSM</span>
                     </a>
+                    
+                    <a href="/tags/Spring/">
+                        <span class="chip bg-color">Spring</span>
+                    </a>
+                    
+                    <a href="/tags/SpringMVC/">
+                        <span class="chip bg-color">SpringMVC</span>
+                    </a>
+                    
+                    <a href="/tags/MyBatis/">
+                        <span class="chip bg-color">MyBatis</span>
+                    </a>
+                    
+                </div>
                 
             </div>
-            <div class="cover-social-link">
-    <a href="https://github.com/magicvanes" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
-        <i class="fab fa-github"></i>
-    </a>
-
-
-
-    <a href="mailto:magicvanes@163.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
-        <i class="fas fa-envelope-open"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1326077790" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1326077790" data-position="top" data-delay="50">
-        <i class="fab fa-qq"></i>
-    </a>
-
-
-
-
-
-
-
-    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
-        <i class="fas fa-rss"></i>
-    </a>
-
-</div>
         </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2016/07/09/jdkforwindows/">
+                    <div class="card-image">
+                        
+                        <img src="/medias/postimg/2.jpg" class="responsive-img" alt="关于JDK在windows10环境下的配置">
+                        
+                        <span class="card-title">关于JDK在windows10环境下的配置</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Java-JDK在Windows10环境下的安装以及配置
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2016-07-09
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="post-category">
+                                    环境搭建
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/JDK/">
+                        <span class="chip bg-color">JDK</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
     </div>
+</article>
 
-    
 </div>
+
 
 <script>
-    $(function () {
-        let coverSlider = $('.carousel');
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
 
-        //用户触摸轮播自动 restartPlay 是否生效
-        let initUserPressedOrDraggedActive = false
-
-        //用户触摸轮播自动 restartPlay
-        function initUserPressedOrDragged(instance) {
-            setInterval(() => {
-                if (instance.pressed || instance.dragged) {
-                    // console.log('initUserPressedOrDragged: ',instance.pressed,instance.dragged)
-                    restartPlay()
-                }
-            }, 1000)
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
         }
 
-        coverSlider.carousel({
-            duration: Number('120'),
-            fullWidth: true,
-            indicators: 'true' === 'true',
-            onCycleTo() {
-                if (!initUserPressedOrDraggedActive) {
-                    // console.log('initUserPressedOrDraggedActive')
-                    initUserPressedOrDragged(this)
-                    initUserPressedOrDraggedActive = true
-                }
-            },
-        })
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
 
-        let carouselIntervalId;
-        
-        // Loop to call the next cover article picture.
-        let autoCarousel = function () {
-            carouselIntervalId = setInterval(function () {
-                coverSlider.carousel('next');
-            }, 5000);
-        };
-        autoCarousel();
-        
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
 
-        function restartPlay() {
-            
-            clearInterval(carouselIntervalId);
-            autoCarousel();
-            
-        };
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Vane&#39;s Blog<br />'
+            + '文章作者: Vanes<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
 
-        
-        // prev and next cover post.
-        $('#prev-cover').click(function () {
-            coverSlider.carousel('prev');
-            restartPlay();
-        });
-        $('#next-cover').click(function () {
-            coverSlider.carousel('next');
-            restartPlay();
-        });
-        
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
     });
 </script>
 
 
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
 
-<main class="content">
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
 
     
-    <div id="indexCard" class="index-card">
-        <div class="container ">
-            <div class="card">
-                <div class="card-content">
-                    
-                        <div class="dream">
-    
-    <div class="title center-align">
-        <i class="far fa-lightbulb"></i>&nbsp;&nbsp;我的梦想
-    </div>
-    
-    <div class="row">
-        <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
-            不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗就会变成壮举，生命就会创造奇迹。——罗伯·舒乐
-        </div>
-    </div>
-</div>
-
-                    
-
-                    
-
-                    
-
-                    
-                    <div id="recommend-sections" class="recommend">
-                        
-
-
-
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    
-
-    
-
-    <!-- 所有文章卡片 -->
-    <article id="articles" class="container articles">
-        <div class="row article-row">
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2017/11/06/ssm/">
-                        <div class="card-image">
-                            
-                            <img src="/medias/postimg/1.jpg" class="responsive-img" alt="SSM框架—详细整合(Spring+SpringMVC+Mybatis)">
-                            
-                            <span class="card-title">SSM框架—详细整合(Spring+SpringMVC+Mybatis)</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                SSM-spring+springMVC+mybatis项目的搭建
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2017-11-06
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E6%95%B4%E5%90%88%E6%A1%86%E6%9E%B6/" class="post-category">
-                                    整合框架
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/SSM/">
-                            <span class="chip bg-color">SSM</span>
-                        </a>
-                        
-                        <a href="/tags/Spring/">
-                            <span class="chip bg-color">Spring</span>
-                        </a>
-                        
-                        <a href="/tags/SpringMVC/">
-                            <span class="chip bg-color">SpringMVC</span>
-                        </a>
-                        
-                        <a href="/tags/MyBatis/">
-                            <span class="chip bg-color">MyBatis</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2017/02/14/mavensetting/">
-                        <div class="card-image">
-                            
-                            <img src="/medias/postimg/3.jpg" class="responsive-img" alt="Maven安装以及本地仓库配置">
-                            
-                            <span class="card-title">Maven安装以及本地仓库配置</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                mavem的安装以及本地仓库的配置
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2017-02-14
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="post-category">
-                                    环境搭建
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/maven/">
-                            <span class="chip bg-color">maven</span>
-                        </a>
-                        
-                        <a href="/tags/versioncontrol/">
-                            <span class="chip bg-color">versioncontrol</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2016/07/09/jdkforwindows/">
-                        <div class="card-image">
-                            
-                            <img src="/medias/postimg/2.jpg" class="responsive-img" alt="关于JDK在windows10环境下的配置">
-                            
-                            <span class="card-title">关于JDK在windows10环境下的配置</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                Java-JDK在Windows10环境下的安装以及配置
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2016-07-09
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="post-category">
-                                    环境搭建
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Java/">
-                            <span class="chip bg-color">Java</span>
-                        </a>
-                        
-                        <a href="/tags/JDK/">
-                            <span class="chip bg-color">JDK</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-        </div>
-    </article>
 
 </main>
 

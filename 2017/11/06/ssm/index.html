@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="SSM框架的搭建, Vane&#39;s Blog">
+    <meta name="keywords" content="SSM框架—详细整合(Spring+SpringMVC+Mybatis), Vane&#39;s Blog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>SSM框架的搭建 | Vane&#39;s Blog</title>
+    <title>SSM框架—详细整合(Spring+SpringMVC+Mybatis) | Vane&#39;s Blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -230,7 +230,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">SSM框架的搭建</h1>
+                    <h1 class="description center-align post-title">SSM框架—详细整合(Spring+SpringMVC+Mybatis)</h1>
                 </div>
             </div>
         </div>
@@ -276,8 +276,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/" class="post-category">
-                                项目搭建
+                            <a href="/categories/%E6%95%B4%E5%90%88%E6%A1%86%E6%9E%B6/" class="post-category">
+                                整合框架
                             </a>
                         
                     </div>
@@ -298,18 +298,18 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    45
+                    222
                 </div>
                 
 
                 
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    1 分
+                </div>
+                
 
                 
-                    <div id="busuanzi_container_page_pv" class="info-break-policy">
-                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
-                        <span id="busuanzi_value_page_pv"></span>
-                    </div>
-				
             </div>
         </div>
         <hr class="clearfix">
@@ -320,13 +320,22 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>学习到了ssm项目的结构，本文将介绍该框架的搭建</p>
-<h1 id="准备工作-开发环境"><a href="#准备工作-开发环境" class="headerlink" title="准备工作:开发环境"></a>准备工作:开发环境</h1><pre class=" language-java"><code class="language-java">    #<span class="token operator">!</span><span class="token operator">/</span>conf<span class="token operator">/</span>setting<span class="token punctuation">.</span>xml
-    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorld</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">private</span> String userName<span class="token punctuation">;</span>
-        <span class="token keyword">private</span> String userPassword<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+                <pre class=" language-bash"><code class="language-bash">学习SSM框架搭建,通过spring+springmvc+mybatis实现基本数据操作
+首先我个人觉得搭建框架其实并不难，只是需要你去付出实际行动，而不是纸上谈兵。
+最关键的还是要理解其中的思想，这点对自己的编程思想很重要
+不过如果用都不会用，那就变成纸上谈兵了<span class="token punctuation">..</span><span class="token punctuation">..</span>.下面我们开始吧~
 </code></pre>
+<h2 id="本文开发环境"><a href="#本文开发环境" class="headerlink" title="本文开发环境"></a>本文开发环境</h2><ol>
+<li>开发IDE:IDEA</li>
+<li>Tomcat版本:Tomcat7.047</li>
+<li>mybatis版本:3.2</li>
+<li>spring版本:4.3.release</li>
+</ol>
+<h2 id="框架介绍"><a href="#框架介绍" class="headerlink" title="框架介绍"></a>框架介绍</h2><ol>
+<li>spring:Spring是一款开源并且轻量的框架，兴起于2003年,简单来说，Spring就是一个IOC(控制反转)跟AOP(面向切面)的容器框架</li>
+<li>springMVC:   Spring MVC 分离了控制器、模型对象、分派器以及处理程序对象的角色，这种分离让它们更容易进行定制</li>
+<li>mybatis:</li>
+</ol>
 
                 
             </div>
@@ -353,7 +362,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2017/11/06/ssm/">http://example.com/2017/11/06/ssm/</a>
+                    <a href="http://www.magicvanes.top/2017/11/06/ssm/">http://www.magicvanes.top/2017/11/06/ssm/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -458,9 +467,9 @@
                 <a href="/2017/11/06/ssm/">
                     <div class="card-image">
                         
-                        <img src="/medias/postimg/1.jpg" class="responsive-img" alt="SSM框架的搭建">
+                        <img src="/medias/postimg/1.jpg" class="responsive-img" alt="SSM框架—详细整合(Spring+SpringMVC+Mybatis)">
                         
-                        <span class="card-title">SSM框架的搭建</span>
+                        <span class="card-title">SSM框架—详细整合(Spring+SpringMVC+Mybatis)</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -477,8 +486,8 @@
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/" class="post-category">
-                                    项目搭建
+                            <a href="/categories/%E6%95%B4%E5%90%88%E6%A1%86%E6%9E%B6/" class="post-category">
+                                    整合框架
                                 </a>
                             
                             
@@ -513,57 +522,48 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2017/11/06/ssm/">
+                <a href="/2017/02/14/mavensetting/">
                     <div class="card-image">
                         
-                        <img src="/medias/postimg/1.jpg" class="responsive-img" alt="SSM框架的搭建">
+                        <img src="/medias/postimg/3.jpg" class="responsive-img" alt="Maven安装以及本地仓库配置">
                         
-                        <span class="card-title">SSM框架的搭建</span>
+                        <span class="card-title">Maven安装以及本地仓库配置</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            SSM-spring+springMVC+mybatis项目的搭建
+                            mavem的安装以及本地仓库的配置
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2017-11-06
+                                <i class="far fa-clock fa-fw icon-date"></i>2017-02-14
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA/" class="post-category">
-                                    项目搭建
+                            <a href="/categories/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/" class="post-category">
+                                    环境搭建
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/SSM/">
-                        <span class="chip bg-color">SSM</span>
+                    <a href="/tags/maven/">
+                        <span class="chip bg-color">maven</span>
                     </a>
                     
-                    <a href="/tags/Spring/">
-                        <span class="chip bg-color">Spring</span>
-                    </a>
-                    
-                    <a href="/tags/SpringMVC/">
-                        <span class="chip bg-color">SpringMVC</span>
-                    </a>
-                    
-                    <a href="/tags/MyBatis/">
-                        <span class="chip bg-color">MyBatis</span>
+                    <a href="/tags/versioncontrol/">
+                        <span class="chip bg-color">versioncontrol</span>
                     </a>
                     
                 </div>

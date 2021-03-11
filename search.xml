@@ -1,18 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>SSM框架的搭建</title>
-    <url>/2017/11/06/ssm/</url>
-    <content><![CDATA[<p>学习到了ssm项目的结构，本文将介绍该框架的搭建</p>
-<h1 id="准备工作-开发环境"><a href="#准备工作-开发环境" class="headerlink" title="准备工作:开发环境"></a>准备工作:开发环境</h1><pre class=" language-java"><code class="language-java">    #<span class="token operator">!</span><span class="token operator">/</span>conf<span class="token operator">/</span>setting<span class="token punctuation">.</span>xml
-    <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorld</span> <span class="token operator">&amp;</span>#<span class="token number">123</span><span class="token punctuation">;</span>
-        <span class="token keyword">private</span> String userName<span class="token punctuation">;</span>
-        <span class="token keyword">private</span> String userPassword<span class="token punctuation">;</span>
-    <span class="token operator">&amp;</span>#<span class="token number">125</span><span class="token punctuation">;</span>
+    <title>关于JDK在windows10环境下的配置</title>
+    <url>/2016/07/09/jdkforwindows/</url>
+    <content><![CDATA[<pre class=" language-bash"><code class="language-bash">今天安装了Windows10,发现Win10环境下,JDK的配置跟之前有很大的不同,防止遗忘,开贴记录,哈哈哈哈哈
+</code></pre>
+<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p><a href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html">oracle官网</a><br><a href="https://pan.baidu.com/s/1a1e45oY29VCPyBlIk0Wl-w">百度网盘,提取码:rpnd</a></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><pre class=" language-bash"><code class="language-bash">安装这里<span class="token punctuation">..</span>.一言难尽，总之记住你安装jdk的目录跟jre的目录就万事大吉，一路确定吧<span class="token operator">!</span>
+</code></pre>
+<h3 id="2、环境变量配置"><a href="#2、环境变量配置" class="headerlink" title="2、环境变量配置"></a>2、环境变量配置</h3><p>重点来啦,win10配置变量不像win7以及其他系统一样，但是我觉得还是win10更加简洁明了</p>
+<ol>
+<li>右击桌面上的此电脑,选择属性</li>
+<li>左边点击高级系统设置</li>
+<li>点击环境变量配置</li>
+<li>在系统变量新建一个名为:JAVA_HOME的环境变量</li>
+<li>然后找到Path变量点击编辑</li>
+<li>右边新建两栏，分别指向你JDK的bin目录和JRE的bin目录</li>
+<li>然后就欧了,记得点两次确定!!</li>
+</ol>
+<pre class=" language-bash"><code class="language-bash">JAVA_HOME变量值:指向你的jdk安装目录
+JDK:%JAVA_HOME%\bin
+JRE:%JAVAN_HOME%\jre\bin
+</code></pre>
+<h4 id="配置完成，测试一下子"><a href="#配置完成，测试一下子" class="headerlink" title="配置完成，测试一下子"></a>配置完成，测试一下子</h4><ol>
+<li>同时按下windows键和R输入cmd打开命令控制台</li>
+<li>输入:java -version,如果显示版本号则成功</li>
+<li>输入java或者javac，如果显示很大一串的信息出来，也算成功</li>
+</ol>
+<h5 id="完成，收工"><a href="#完成，收工" class="headerlink" title="完成，收工"></a>完成，收工</h5>]]></content>
+      <categories>
+        <category>环境搭建</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
+        <tag>JDK</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Maven安装以及本地仓库配置</title>
+    <url>/2017/02/14/mavensetting/</url>
+    <content><![CDATA[<p>今天用到了maven进行项目版本管理，感觉maven真的是太强了。记录一下过程<br>Maven是一个Java项目管理和构建工具，它可以定义项目结构、项目依赖，并使用统一的方式进行自动化构建。</p>
+<h2 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h2><pre class=" language-bash"><code class="language-bash">通过官网下载zip到本地进行解压,zip是免安装的，配置的时候只需要指向解压出来的根目录就好了
+</code></pre>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><ol>
+<li>基本跟jdk配置差不多，就是少了个配置。参考:<a href="http://www.magicvanes.top/2016/11/06/jdkforwindows">jdk配置</a></li>
+<li>配置好先cmd测试一下:mvn -version,如果显示版本信息就是配置成功了</li>
+<li>命令的使用:通过cmd操作cd命令进入maven根目录执行</li>
+</ol>
+<h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><pre class=" language-bash"><code class="language-bash">mvn archetype：create 创建Maven项目
+
+mvn compile 编译源代码
+
+mvn deploy 发布项目
+
+mvn test-compile 编译测试源代码
+
+mvn <span class="token function">test</span> 运行应用程序中的单元测试
+
+mvn site 生成项目相关信息的网站
+
+mvn clean 清除项目目录中的生成结果
+
+mvn package 根据项目生成的jar
+
+mvn <span class="token function">install</span> 在本地Repository中安装jar
+
+mvn eclipse:eclipse 生成eclipse项目文件
+
+mvnjetty:run 启动jetty服务
+
+mvntomcat:run 启动tomcat服务
+
+mvn clean package -Dmaven.test.skip<span class="token operator">=</span>true:清除以前的包后重新打包，跳过测试类
+</code></pre>
+<h4 id="添加本地仓库"><a href="#添加本地仓库" class="headerlink" title="添加本地仓库"></a>添加本地仓库</h4><p>在maven根目录新建一个文件夹为repository的文件夹作为本地仓库，用于存放下载的jar包文件<br>在根目录下的conf目录进行找到setting进行如下配置:</p>
+<pre class=" language-xml"><code class="language-xml">!/conf/setting.xml
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>localRepository</span><span class="token punctuation">></span></span>yourDirectory\repository<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>localRepository</span><span class="token punctuation">></span></span>
+</code></pre>
+<h5 id="添加阿里云maven仓库镜像"><a href="#添加阿里云maven仓库镜像" class="headerlink" title="添加阿里云maven仓库镜像"></a>添加阿里云maven仓库镜像</h5><p>如果没梯子的话，平常开发项目下载jar包是一件很痛苦的事情，所以直接换国内的镜像地址，少点等待，多点爱。<br>在setting.xml修改如下配置:</p>
+<pre class=" language-java"><code class="language-java"><span class="token operator">!</span><span class="token operator">/</span>conf<span class="token operator">/</span>setting<span class="token operator">/</span>mirror
+<span class="token operator">&lt;</span>mirrors<span class="token operator">></span>
+<span class="token operator">&lt;</span>mirror<span class="token operator">></span>
+<span class="token operator">&lt;</span>id<span class="token operator">></span>aliyunmaven<span class="token operator">&lt;</span><span class="token operator">/</span>id<span class="token operator">></span>
+  <span class="token operator">&lt;</span>mirrorOf<span class="token operator">></span><span class="token operator">*</span><span class="token operator">&lt;</span><span class="token operator">/</span>mirrorOf<span class="token operator">></span>
+    <span class="token operator">&lt;</span>name<span class="token operator">></span>阿里云公共仓库<span class="token operator">&lt;</span><span class="token operator">/</span>name<span class="token operator">></span>
+  <span class="token operator">&lt;</span>url<span class="token operator">></span>https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>maven<span class="token punctuation">.</span>aliyun<span class="token punctuation">.</span>com<span class="token operator">/</span>repository<span class="token operator">/</span><span class="token keyword">public</span><span class="token operator">&lt;</span><span class="token operator">/</span>url<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>mirror<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>mirrors<span class="token operator">></span>
 </code></pre>
 ]]></content>
       <categories>
-        <category>项目搭建</category>
+        <category>环境搭建</category>
+      </categories>
+      <tags>
+        <tag>maven</tag>
+        <tag>versioncontrol</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SSM框架—详细整合(Spring+SpringMVC+Mybatis)</title>
+    <url>/2017/11/06/ssm/</url>
+    <content><![CDATA[<pre class=" language-bash"><code class="language-bash">学习SSM框架搭建,通过spring+springmvc+mybatis实现基本数据操作
+首先我个人觉得搭建框架其实并不难，只是需要你去付出实际行动，而不是纸上谈兵。
+最关键的还是要理解其中的思想，这点对自己的编程思想很重要
+不过如果用都不会用，那就变成纸上谈兵了<span class="token punctuation">..</span><span class="token punctuation">..</span>.下面我们开始吧~
+</code></pre>
+<h2 id="本文开发环境"><a href="#本文开发环境" class="headerlink" title="本文开发环境"></a>本文开发环境</h2><ol>
+<li>开发IDE:IDEA</li>
+<li>Tomcat版本:Tomcat7.047</li>
+<li>mybatis版本:3.2</li>
+<li>spring版本:4.3.release</li>
+</ol>
+<h2 id="框架介绍"><a href="#框架介绍" class="headerlink" title="框架介绍"></a>框架介绍</h2><ol>
+<li>spring:Spring是一款开源并且轻量的框架，兴起于2003年,简单来说，Spring就是一个IOC(控制反转)跟AOP(面向切面)的容器框架</li>
+<li>springMVC:   Spring MVC 分离了控制器、模型对象、分派器以及处理程序对象的角色，这种分离让它们更容易进行定制</li>
+<li>mybatis:</li>
+</ol>
+]]></content>
+      <categories>
+        <category>整合框架</category>
       </categories>
       <tags>
         <tag>SSM</tag>
